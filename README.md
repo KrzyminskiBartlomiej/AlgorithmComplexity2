@@ -1,2 +1,2 @@
 # AlgorithmComplexity
-Piotr Wroblewski
+Jan Lepa
