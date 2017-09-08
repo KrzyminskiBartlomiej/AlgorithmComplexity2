@@ -1,6 +1,4 @@
 #include "InsertionSort.hpp"
-#include <time.h>
-#include <cstdlib>
 
 void InsertionSort::sort(std::vector<int> toSort) {
 	unsigned long long transitions = 0;

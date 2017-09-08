@@ -1,6 +1,8 @@
 #ifndef SORTINGALGORITHM_HPP_
 #define SORTINGALGORITHM_HPP_
 #include <vector>
+#include <time.h>
+#include <cstdlib>
 
 class SortingAlgorithm {
 public:
