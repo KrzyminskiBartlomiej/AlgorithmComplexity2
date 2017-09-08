@@ -15,7 +15,6 @@ public:
 	void createBackwardSortedSet(std::vector<int>& toFill, unsigned long long vectorSize);
 	void createSortedSetWithFirstRandomValue(std::vector<int>& toFill, unsigned long long vectorSize);
 	void createBackwardSortedSetWithLastRandomValue(std::vector<int>& toFill, unsigned long long vectorSize);
-
 	void extendRandomSet(std::vector<int>& toFill, unsigned long long toAdd);
 	void extendSortedSet(std::vector<int>&toFill, unsigned long long toAdd);
 	void extendBackwardSortedSet(std::vector<int>& toFill, unsigned long long toAdd);
