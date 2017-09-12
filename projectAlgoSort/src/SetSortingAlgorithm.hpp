@@ -7,6 +7,7 @@
 #include"CountingSort.hpp"
 //#include"HeapSort.hpp"
 #include"SortingAlgorithm.hpp"
+#include <iostream>
 
 //void setSortingAlgorithm(AlgoSort& toSet, int sortAlgoNumber)
 SortingAlgorithm* setSortingAlgorithm(int sortAlgoNumber);

@@ -31,6 +31,7 @@ void Logger::openFile(unsigned int typeOfSortingAlgorithm) {
 		break;
 	default:
 		std::cout << "File can not be opened!" << std::endl;
+		break;
 	}
 }
 
@@ -56,6 +57,7 @@ void Logger::logVectorType(unsigned int typeOfVector) {
 		std::cout
 				<< "Converting of sorting algorithm from integer to string failed"
 				<< std::endl;
+		break;
 	}
 	Logger::getFile() << "----------------------------------------" << std::endl
 			<< setType << std::endl

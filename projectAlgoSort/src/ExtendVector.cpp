@@ -18,5 +18,8 @@ void extendVector(std::vector<int>&toFill, int setNumber, unsigned long long siz
 	case 5:
 		generator.extendBackwardSortedSetWithLastRandomValue(toFill, size);
 		break;
+	default:
+		std::cout << "Vector extension failed!" << std::endl;
+		break;
 	}
 }

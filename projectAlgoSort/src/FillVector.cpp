@@ -18,5 +18,8 @@ void fillVector(std::vector<int>&toFill, int setNumber, unsigned long long size)
 	case 5:
 		generator.createBackwardSortedSetWithLastRandomValue(toFill,size);
 		break;
+	default:
+		std::cout << "Vector filling failed!" << std::endl;
+		break;
 	}
 }

@@ -21,6 +21,9 @@ SortingAlgorithm* setSortingAlgorithm(int sortAlgoNumber) {
 //	case 5:
 //		toSet = new HeapSort();
 //		break;
+	default:
+		std::cout << "The sorting algorithm setting failed!" << std::endl;
+		break;
 	}
 	return toSet;
 }

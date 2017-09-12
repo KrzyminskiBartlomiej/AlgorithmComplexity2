@@ -57,7 +57,7 @@ unsigned long long setInterval() {
 
 unsigned long long setIterations() {
 	unsigned long long iterations;
-	std::cout << "Enter itertions: ";
+	std::cout << "Enter iterations: ";
 	std::cin >> iterations;
 	return iterations;
 }
