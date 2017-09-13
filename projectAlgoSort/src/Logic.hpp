@@ -6,7 +6,7 @@
 #include"QuickSort.hpp"
 #include"MergeSort.hpp"
 #include"CountingSort.hpp"
-//#include"HeapSort.hpp"
+#include"HeapSort.hpp"
 #include"FillVector.hpp"
 #include"ExtendVector.hpp"
 #include"FillVector.hpp"
