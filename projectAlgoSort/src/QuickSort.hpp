@@ -1,6 +1,5 @@
 #ifndef QUICKSORT_HPP_
 #define QUICKSORT_HPP_
-
 #include "SortingAlgorithm.hpp"
 
 class QuickSort: public SortingAlgorithm {

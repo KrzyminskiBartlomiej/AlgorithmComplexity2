@@ -4,6 +4,8 @@
 //============================================================================
 #include "BubbleSort.hpp"
 
+using namespace std;
+
 // The main function with one argument to do Bubble Sort
 void BubbleSort::sort(std::vector<int> toSort) {
 	unsigned long long transitions = 0; // The flag counting transitions

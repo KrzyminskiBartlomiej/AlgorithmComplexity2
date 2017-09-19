@@ -1,6 +1,5 @@
 #ifndef INSERTIONSORT_HPP_
 #define INSERTIONSORT_HPP_
-
 #include "SortingAlgorithm.hpp"
 
 class InsertionSort: public SortingAlgorithm {

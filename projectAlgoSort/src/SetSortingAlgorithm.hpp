@@ -9,7 +9,6 @@
 #include"SortingAlgorithm.hpp"
 #include <iostream>
 
-//void setSortingAlgorithm(AlgoSort& toSet, int sortAlgoNumber)
 SortingAlgorithm* setSortingAlgorithm(int sortAlgoNumber);
 
 #endif /* SETSORTINGALGORITHM_HPP_ */

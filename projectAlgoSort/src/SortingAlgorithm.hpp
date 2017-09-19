@@ -3,6 +3,7 @@
 #include <vector>
 #include <time.h>
 #include <cstdlib>
+#include <iostream>
 
 class SortingAlgorithm {
 public:
