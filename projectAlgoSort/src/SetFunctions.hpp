@@ -1,9 +1,8 @@
 #ifndef SETFUNCTIONS_HPP_
 #define SETFUNCTIONS_HPP_
 #include<iostream>
-#include"Logic.hpp"
 
-int setVectorType(int n);
+int setVectorType();
 unsigned long long setVectorSize();
 int setVectorsNumber();
 int setAlgorithmsNumber();
