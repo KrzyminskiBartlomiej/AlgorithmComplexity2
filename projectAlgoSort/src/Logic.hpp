@@ -7,13 +7,18 @@
 #include"MergeSort.hpp"
 #include"CountingSort.hpp"
 #include"HeapSort.hpp"
-#include"FillVector.hpp"
-#include"ExtendVector.hpp"
 #include"Logger.hpp"
-#include"SetSortingAlgorithm.hpp"
-#include"SetFunctions.hpp"
 #include<iostream>
 
-void logic();
+#include "FunctionsSetter.hpp"
+#include "SortingAlgorithmSetter.hpp"
+#include "VectorExtender.hpp"
+#include "VectorFiller.hpp"
+
+class Logic {
+public:
+	void logic();
+};
+
 
 #endif /* LOGIC_HPP_ */

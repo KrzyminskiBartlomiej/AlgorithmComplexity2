@@ -2,10 +2,10 @@
 // Name        : SetSortingAlgorithm.cpp
 // Description : C++ program for implementation of the function that returns a pointer to SortingAlgorithm type
 //============================================================================
-#include "SetSortingAlgorithm.hpp"
+#include "SortingAlgorithmSetter.hpp"
 
 // Function responsible for creating a pointer to SortingAlgorithm type
-SortingAlgorithm* setSortingAlgorithm(int sortAlgoNumber) {
+SortingAlgorithm* SortingAlgorithmSetter::setSortingAlgorithm(int sortAlgoNumber) {
 	SortingAlgorithm* toSet;
 	switch (sortAlgoNumber) {
 	case 1:

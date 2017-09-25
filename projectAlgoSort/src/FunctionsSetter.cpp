@@ -2,10 +2,10 @@
 // Name        : SetFunctions.cpp
 // Description : C++ program for implementation of functions that can be controlled by users
 //============================================================================
-#include "SetFunctions.hpp"
+#include "FunctionsSetter.hpp"
 
 // Function that allows to select the type of vector
-int setVectorType() {
+int FunctionsSetter::setVectorType() {
 	int setNumber;
 	std::cout << "Select type of set: " << std::endl;
 	std::cout << "1.Sorted set." << std::endl;
@@ -19,7 +19,7 @@ int setVectorType() {
 }
 
 // Function that allows to select the size of vector
-unsigned long long setVectorSize() {
+unsigned long long FunctionsSetter::setVectorSize() {
 	unsigned long long vectorSize;
 	std::cout << "Enter initial vector's size: ";
 	std::cin >> vectorSize;
@@ -27,7 +27,7 @@ unsigned long long setVectorSize() {
 }
 
 // Function that allows to select the number of sorting algorithms
-int setAlgorithmsNumber() {
+int FunctionsSetter::setAlgorithmsNumber() {
 	int algorithmsNumber;
 	std::cout << "Enter number of algorithms you want to use: ";
 	std::cin >> algorithmsNumber;
@@ -35,7 +35,7 @@ int setAlgorithmsNumber() {
 }
 
 // Function that allows to select the type of sorting algorithm
-int setAlgorithmType(int n) {
+int FunctionsSetter::setAlgorithmType(int n) {
 	int algorithmNumber;
 	std::cout << "Select " << n + 1 << " algorithm: " << std::endl;
 	std::cout << "1.Bubble sort." << std::endl;
@@ -50,7 +50,7 @@ int setAlgorithmType(int n) {
 }
 
 // Function that allows to select the interval
-unsigned long long setInterval() {
+unsigned long long FunctionsSetter::setInterval() {
 	unsigned long long interval;
 	std::cout << "Enter interval: ";
 	std::cin >> interval;
@@ -58,7 +58,7 @@ unsigned long long setInterval() {
 }
 
 // Function that allows to select the number of iterations
-unsigned long long setIterations() {
+unsigned long long FunctionsSetter::setIterations() {
 	unsigned long long iterations;
 	std::cout << "Enter iterations: ";
 	std::cin >> iterations;

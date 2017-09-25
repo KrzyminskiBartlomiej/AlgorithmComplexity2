@@ -2,11 +2,11 @@
 // Name        : FillVector.cpp
 // Description : C++ program for implementation of the function that fills the container with elements
 //============================================================================
-#include "FillVector.hpp"
+#include "VectorFiller.hpp"
 
 // The function responsible for filling the container (vector) with integers
 // It uses DataSetGenerator class and its function
-void fillVector(std::vector<int>&toFill, int setNumber, unsigned long long size) {
+void VectorFiller::fillVector(std::vector<int>&toFill, int setNumber, unsigned long long size) {
 	DataSetGenerator generator;
 
 	// Select a vector type according to an argument passed to the function
