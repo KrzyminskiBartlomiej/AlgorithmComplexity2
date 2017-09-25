@@ -52,13 +52,13 @@ void Logic::logic() {
 	iterations = setter.setIterations();
 
 	// Create an empty vector
-	std::vector<int> vectorToSort(0);
+	std::vector<int> vectorToSort(vectorSize);
 
 	// Create an object of VectorFiller class
 	VectorFiller filler;
 
 	// Fill the created vector with elements according to arguments passed to the function
-	filler.fillVector(vectorToSort, selectedVector, vectorSize);
+	filler.fillVector(vectorToSort, selectedVector);
 
 	// For all selected sorting algorithms, create/open files gathering results of sorting, log type of selected vector and close files
 	for (int i = 0; i < algorithmsNumber; i++) {

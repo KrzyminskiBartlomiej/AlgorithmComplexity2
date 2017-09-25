@@ -4,74 +4,72 @@
 //============================================================================
 #include "DataSetGenerator.hpp"
 
-// Function responsible for creating a sorted set
-void DataSetGenerator::createSortedSet(std::vector<int>& toFill, unsigned int sizeOfVector) {
-	for (unsigned int i = 0; i < sizeOfVector; i++) {
-		toFill.push_back(i);
+void DataSetGenerator::createSortedSet(std::vector<int>&toFill){
+	unsigned int valueToAdd = 0;
+    for(std::vector<int>::iterator it=toFill.begin(); it!=toFill.end(); ++it){
+		*it=valueToAdd++;
 	}
 }
 
-// Function responsible for creating a random set
-void DataSetGenerator::createRandomSet(std::vector<int>& toFill, unsigned int sizeOfVector) {
-	for (unsigned int i = 0; i < sizeOfVector; i++) {
-		toFill.push_back(rand() % sizeOfVector);
+void DataSetGenerator::extendSortedSet(std::vector<int>&toFill, unsigned long long toAdd){
+    int lastElementIndex = toFill.size();
+    int valueToAdd = toFill.back()+1;
+    toFill.resize(toFill.size()+toAdd);
+    for(unsigned int i=0; i<toAdd; ++i){
+       toFill[lastElementIndex++]=valueToAdd++;
+    }
+}
+
+void DataSetGenerator::createRandomSet(std::vector<int>& toFill){
+	unsigned long long vectorSize = toFill.size();
+	for(std::vector<int>::iterator it=toFill.begin(); it!=toFill.end(); ++it){
+		*it=std::rand()%vectorSize;
 	}
 }
 
-// Function responsible for creating a backward sorted set
-void DataSetGenerator::createBackwardSortedSet(std::vector<int>& toFill, unsigned int sizeOfVector) {
-	for (int i = sizeOfVector - 1; i >= 0; i--) {
-		toFill.push_back(i);
+void DataSetGenerator::extendRandomSet(std::vector<int>& toFill, unsigned long long toAdd){
+    int lastElementIndex = toFill.size();
+    toFill.resize(toFill.size()+toAdd);
+	for(unsigned int i=1; i<toAdd; ++i){
+		toFill[lastElementIndex++]= std::rand()%toFill.size();
 	}
 }
 
-// Function responsible for creating a sorted set with first random value
-void DataSetGenerator::createSortedSetWithFirstRandomValue(std::vector<int>& toFill, unsigned int sizeOfVector) {
-	toFill.push_back(rand() % sizeOfVector);
-	for (unsigned int i = 1; i < sizeOfVector; i++) {
-		toFill.push_back(i);
+void DataSetGenerator::createBackwardSortedSet(std::vector<int>& toFill){
+	unsigned int valueToAdd = toFill.size()-1;
+    for(std::vector<int>::iterator it=toFill.begin(); it!=toFill.end(); ++it){
+		*it=valueToAdd--;
 	}
 }
 
-// Function responsible for creating a backward sorted set with last random value
-void DataSetGenerator::createBackwardSortedSetWithLastRandomValue(std::vector<int>& toFill, unsigned int sizeOfVector) {
-	for (int i = sizeOfVector - 1; i > 0; i--) {
-		toFill.push_back(i);
-	}
-	toFill.push_back(rand() % sizeOfVector);
+void DataSetGenerator::extendBackwardSortedSet(std::vector<int>& toFill, unsigned long long toAdd){
+	unsigned int valueToAdd=toFill.front();
+    for(unsigned int i=0; i<toAdd; ++i){
+    	toFill.insert(toFill.begin(),++valueToAdd);
+    }
 }
 
-// Function responsible for extension of sorted set
-void DataSetGenerator::extendSortedSet(std::vector<int>& toExtend, unsigned long long toAdd) {
-	for (unsigned int i = toExtend.size(), j = 0; j < toAdd; i++, j++) {
-		toExtend.push_back(i);
-	}
-}
-
-// Function responsible for extension of random set
-void DataSetGenerator::extendRandomSet(std::vector<int>& toExtend, unsigned long long toAdd) {
-	for (unsigned int i = 0; i < toAdd; i++) {
-		toExtend.push_back(rand() % toExtend.size());
+void DataSetGenerator::createSortedSetWithFirstRandomValue(std::vector<int>& toFill){
+	toFill[0]=std::rand()%toFill.size();
+	unsigned long valueToAdd = 1;
+	for(std::vector<int>::iterator it=toFill.begin()+1; it!=toFill.end(); ++it){
+		*it=valueToAdd++;
 	}
 }
 
-// Function responsible for extension of backward sorted set
-void DataSetGenerator::extendBackwardSortedSet(std::vector<int>& toExtend, unsigned long long toAdd) {
-	for (unsigned int j = 0, i = toExtend.size(); j < toAdd; j++, i++) {
-		toExtend.insert(toExtend.begin(), i);
-	}
+void DataSetGenerator::extendSortedSetWithFirstRandomValue(std::vector<int>& toFill, unsigned long long toAdd){
+	extendSortedSet(toFill,toAdd);
 }
 
-// Function responsible for extension of sorted set with first random value
-void DataSetGenerator::extendSortedSetWithFirstRandomValue(std::vector<int>& toExtend, unsigned long long toAdd) {
-	for (unsigned int i = toExtend.size(), j = 0; j < toAdd; i++, j++) {
-		toExtend.push_back(i);
-	}
+void DataSetGenerator::createBackwardSortedSetWithLastRandomValue(std::vector<int>& toFill){
+	createBackwardSortedSet(toFill);
+	toFill[toFill.size()-1]= std::rand()%toFill.size();
 }
 
-// Function responsible for extension of backward sorted set with last random value
-void DataSetGenerator::extendBackwardSortedSetWithLastRandomValue(std::vector<int>& toExtend, unsigned long long toAdd) {
-	for (unsigned int j = 0, i = toExtend.size(); j < toAdd; j++, i++) {
-		toExtend.insert(toExtend.begin(), i);
-	}
+void DataSetGenerator::extendBackwardSortedSetWithLastRandomValue(std::vector<int>& toFill, unsigned long long toAdd){
+	  unsigned int valueToAdd=toFill.front();
+      for(unsigned int i=0; i<toAdd; ++i){
+	   	toFill.insert(toFill.begin(),++valueToAdd);
+	  }
+      toFill[toFill.size()-1]= std::rand()%toFill.size();
 }

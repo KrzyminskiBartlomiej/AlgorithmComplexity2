@@ -9,10 +9,11 @@
 // The main function of the program
 int main() {
 	int key = 1;
+	Logic log;
 	while (key) {
 
 		// Call logic function responsible for whole logic of the program
-		logic();
+		log.logic();
 		std::cout << "Press zero to exit program. Press any other number to continue. " << std::endl;
 		std::cin >> key;
 	}
