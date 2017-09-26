@@ -1,95 +1,87 @@
-//============================================================================
-// Name        : Logic.cpp
-// Description : C++ program for implementation of program logic
-//============================================================================
 #include "Logic.hpp"
 
-// The main function responsible for whole logic of the program
-// It calls function that creates specified data sets and implements different sorting algorithms
-void Logic::logic() {
-	srand(time(NULL));
-	unsigned long long vectorSize, interval, iterations;
+Logic::Logic(){
+	setAlgorithmsNumber();
+	setselectedAlgorithms();
+	setVectorType();
+	setInitialVectorSize();
+	setInterval();
+	setIterations();
+	fillVector();
+}
 
-	// Create a pointer to SortingAlgorithm type
-	SortingAlgorithm* sortingAlgorithm;
+void Logic::setAlgorithmsNumber(){
+	mAlgorithmsNumber = mSetter.setAlgorithmsNumber();
+}
 
-	// Create an object of Logger class
-	Logger logger;
-
-	// Create an object of FunctionsSetter class
-	FunctionsSetter setter;
-
-	// Select the number of sorting algorithms
-	int algorithmsNumber;
-	algorithmsNumber = setter.setAlgorithmsNumber();
-
-	// Create an array to store types of selected sorting algorithms
-	unsigned int* selectedAlgorithms;
-	selectedAlgorithms = new unsigned int[algorithmsNumber];
-
-	// Add types of sorting algorithms to created array
-	if (algorithmsNumber < 6) {
-		for (int i = 0; i < algorithmsNumber; ++i) {
-			selectedAlgorithms[i] = setter.setAlgorithmType(i);
+void Logic::setselectedAlgorithms(){
+	mSelectedAlgorithms = new unsigned int[mAlgorithmsNumber];
+	if (mAlgorithmsNumber < 6) {
+		for (int i = 0; i < mAlgorithmsNumber; ++i){
+			mSelectedAlgorithms[i] = mSetter.setAlgorithmType(i);
 		}
 	} else {
-		algorithmsNumber = 6;
-		for (int i = 0; i < algorithmsNumber; ++i) {
-			selectedAlgorithms[i] = i + 1;
+		mAlgorithmsNumber = 6;
+		for (int i = 0; i < mAlgorithmsNumber; ++i){
+			mSelectedAlgorithms[i] = i + 1;
 		}
 	}
-
-	// Select the type of vector to be sorted
-	int selectedVector = setter.setVectorType();
-
-	//select the size of vector
-	vectorSize = setter.setVectorSize();
-
-	// Select the interval
-	interval = setter.setInterval();
-
-	// Select the number of iterations
-	iterations = setter.setIterations();
-
-	// Create an empty vector
-	std::vector<int> vectorToSort(vectorSize);
-
-	// Create an object of VectorFiller class
-	VectorFiller filler;
-
-	// Fill the created vector with elements according to arguments passed to the function
-	filler.fillVector(vectorToSort, selectedVector);
-
-	// For all selected sorting algorithms, create/open files gathering results of sorting, log type of selected vector and close files
-	for (int i = 0; i < algorithmsNumber; i++) {
-		logger.openFile(selectedAlgorithms[i]);
-		logger.logVectorType(selectedVector);
-		logger.closeFile();
-	}
-
-	// Create an object of VectorExtender class
-	VectorExtender extender;
-
-	// Create an object of SortingAlgorithmSetter class
-	SortingAlgorithmSetter algorithmSetter;
-
-	// Extend selected vector as many times as indicated by iterations
-	for (unsigned int i = 0; i <= iterations; i++) {
-		if (i) {
-			extender.extendVector(vectorToSort, selectedVector, interval);
-		}
-
-		// Sort filled vector using all selected sorting algorithms, open created files, log all desired results and close files
-		for (int j = 0; j < algorithmsNumber; j++) {
-			sortingAlgorithm = algorithmSetter.setSortingAlgorithm(selectedAlgorithms[j]);
-			sortingAlgorithm->sort(vectorToSort);
-			logger.openFile(selectedAlgorithms[j]);
-			logger.logSortingResults(vectorSize + (i * interval), sortingAlgorithm->getTime(), sortingAlgorithm->getTransitions());
-			logger.closeFile();
-		}
-	}
-
-	// Delete dynamically allocated variables/arrays
-	delete sortingAlgorithm;
-	delete[] selectedAlgorithms;
 }
+
+void Logic::setVectorType(){
+	mSelectedVector = mSetter.setVectorType();
+}
+
+void Logic::setInterval(){
+	mInterval = mSetter.setInterval();
+}
+
+void Logic::setIterations(){
+	mIterations = mSetter.setIterations();
+}
+
+void Logic::setInitialVectorSize(){
+	mVectorSize = mSetter.setVectorSize();
+	mVectorToSort.resize(mVectorSize);
+}
+
+void Logic::fillVector(){
+	mFiller.fillVector(mVectorToSort, mSelectedVector);
+}
+
+void Logic::logVectorTypes(){
+	for (int i = 0; i < mAlgorithmsNumber; i++) {
+		mLogger.openFile(mSelectedAlgorithms[i]);
+		mLogger.logVectorType(mSelectedVector);
+		mLogger.closeFile();
+	}
+}
+
+void Logic::extendVector(){
+	mExtender.extendVector(mVectorToSort, mSelectedVector, mInterval);
+}
+
+void Logic::logSortingResults(int algorithmIndex, int iteration){
+	mLogger.openFile(mSelectedAlgorithms[algorithmIndex]);
+	mLogger.logSortingResults(mVectorSize + (iteration * mInterval), mSortingAlgorithm->getTime(), mSortingAlgorithm->getTransitions());
+	mLogger.closeFile();
+}
+
+void Logic::sort(){
+	for(unsigned int i = 0; i <= mIterations; i++) {
+		if (i) {
+			extendVector();
+		}
+		for (int j = 0; j < mAlgorithmsNumber; j++) {
+			mSortingAlgorithm = mAlgorithmSetter.setSortingAlgorithm(mSelectedAlgorithms[j]);
+			mSortingAlgorithm->sort(mVectorToSort);
+			logSortingResults(j,i);
+		}
+	}
+}
+
+Logic::~Logic(){
+	delete mSortingAlgorithm;
+	delete[] mSelectedAlgorithms;
+}
+
