@@ -6,14 +6,12 @@
 #include<utility>
 #include"Logic.hpp"
 
-// The main function of the program
 int main() {
 	int key = 1;
-	Logic log;
 	while (key) {
-
-		// Call logic function responsible for whole logic of the program
-		log.logic();
+		Logic logic;
+		logic.logVectorTypes();
+		logic.sort();
 		std::cout << "Press zero to exit program. Press any other number to continue. " << std::endl;
 		std::cin >> key;
 	}
