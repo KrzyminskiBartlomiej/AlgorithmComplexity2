@@ -6,7 +6,7 @@
 
 class VectorFiller {
 public:
-	void fillVector(std::vector<int>&toFill, int setNumber, unsigned long long size);
+	void fillVector(std::vector<int>&toFill, int setNumber);
 };
 
 #endif /* VECTORFILLER_HPP_ */

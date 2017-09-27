@@ -6,11 +6,11 @@
 
 class DataSetGenerator {
 public:
-	void createSortedSet(std::vector<int>& toFill, unsigned int sizeOfVector);
-	void createRandomSet(std::vector<int>& toFill, unsigned int sizeOfVector);
-	void createBackwardSortedSet(std::vector<int>& toFill, unsigned int sizeOfVector);
-	void createSortedSetWithFirstRandomValue(std::vector<int>& toFill, unsigned int sizeOfVector);
-	void createBackwardSortedSetWithLastRandomValue(std::vector<int>& toFill, unsigned int sizeOfVector);
+	void createSortedSet(std::vector<int>& toFill);
+	void createRandomSet(std::vector<int>& toFill);
+	void createBackwardSortedSet(std::vector<int>& toFill);
+	void createSortedSetWithFirstRandomValue(std::vector<int>& toFill);
+	void createBackwardSortedSetWithLastRandomValue(std::vector<int>& toFill);
 
 	void extendSortedSet(std::vector<int>& toExtend, unsigned long long toAdd);
 	void extendRandomSet(std::vector<int>& toExtend, unsigned long long toAdd);
