@@ -59,6 +59,7 @@ void DataSetGenerator::createSortedSetWithFirstRandomValue(std::vector<int>& toF
 
 void DataSetGenerator::extendSortedSetWithFirstRandomValue(std::vector<int>& toFill, unsigned long long toAdd){
 	extendSortedSet(toFill,toAdd);
+	toFill[0]=std::rand()%toFill.size();
 }
 
 void DataSetGenerator::createBackwardSortedSetWithLastRandomValue(std::vector<int>& toFill){
