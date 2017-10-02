@@ -21,14 +21,15 @@ public:
 
    Logic();
    void setAlgorithmsNumber();
-   void setselectedAlgorithms();
-   void setVectorType();
+   void setSelectedAlgorithms();
+   void setVectorsNumber();
+   void setSelectedVectors();
    void setInterval();
    void setIterations();
    void setInitialVectorSize();
-   void fillVector();
-   void extendVector();
-   void logVectorTypes();
+   void fillVector(int n);
+   void extendVector(int n);
+   void logVectorTypes(int n);
    void sort();
    void logSortingResults(int algorithmIndex, int iteration);
    ~Logic();
@@ -36,7 +37,8 @@ public:
 private:
 	unsigned long long mVectorSize, mInterval, mIterations;
 	unsigned int* mSelectedAlgorithms;
-	int mAlgorithmsNumber, mSelectedVector;
+	unsigned int* mSelectedVectors;
+	int mAlgorithmsNumber, mVectorsNumber;
 	SortingAlgorithm* mSortingAlgorithm;
 	Logger mLogger;
 	FunctionsSetter mSetter;

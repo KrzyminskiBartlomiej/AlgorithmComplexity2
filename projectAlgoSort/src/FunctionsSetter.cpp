@@ -5,9 +5,9 @@
 #include "FunctionsSetter.hpp"
 
 // Function that allows to select the type of vector
-int FunctionsSetter::setVectorType() {
+int FunctionsSetter::setVectorType(int n) {
 	int setNumber;
-	std::cout << "Select type of set: " << std::endl;
+	std::cout << "Select "<<n+1<<" type of set: " << std::endl;
 	std::cout << "1.Sorted set." << std::endl;
 	std::cout << "2.Random set." << std::endl;
 	std::cout << "3.Backward sorted set." << std::endl;
@@ -15,6 +15,9 @@ int FunctionsSetter::setVectorType() {
 	std::cout << "5.Backward sorted set with last random value." << std::endl;
 	std::cout << "Enter number: ";
 	std::cin >> setNumber;
+	if(setNumber>5){
+		setNumber=5;
+	}
 	return setNumber;
 }
 
@@ -34,6 +37,13 @@ int FunctionsSetter::setAlgorithmsNumber() {
 	return algorithmsNumber;
 }
 
+int FunctionsSetter::setVectorsNumber(){
+	int vectorsNumber;
+	std::cout << "Enter number of vectors you want to use: ";
+	std::cin >> vectorsNumber;
+	return vectorsNumber;
+}
+
 // Function that allows to select the type of sorting algorithm
 int FunctionsSetter::setAlgorithmType(int n) {
 	int algorithmNumber;
@@ -46,6 +56,9 @@ int FunctionsSetter::setAlgorithmType(int n) {
 	std::cout << "6.Heap sort." << std::endl;
 	std::cout << "Enter number: ";
 	std::cin >> algorithmNumber;
+	if(algorithmNumber>6){
+		algorithmNumber=6;
+	}
 	return algorithmNumber;
 }
 
