@@ -4,9 +4,6 @@
 //============================================================================
 #include "Logger.hpp"
 
-Logger::Logger() {
-}
-
 // The function responsible for opening/creating the file
 void Logger::openFile(unsigned int typeOfSortingAlgorithm) {
 
@@ -76,9 +73,4 @@ void Logger::closeFile() {
 // The function responsible for getting the file
 std::fstream& Logger::getFile() {
 	return mFile;
-}
-
-// Destructor that closes an open file
-Logger::~Logger() {
-	Logger::mFile.close();
 }
