@@ -56,21 +56,16 @@ void Logger::logVectorType(unsigned int typeOfVector) {
 		std::cout << "Converting of sorting algorithm from integer to string failed" << std::endl;
 		break;
 	}
-	Logger::getFile() << "----------------------------------------" << std::endl << setType << std::endl << "----------------------------------------"
+	mFile << "----------------------------------------" << std::endl << setType << std::endl << "----------------------------------------"
 			<< std::endl;
 }
 
 // The function responsible for logging all sorting results to an open file
 void Logger::logSortingResults(int sizeOfVector, double time, long long transitions) {
-	Logger::getFile() << sizeOfVector << ";" << time << ";" << transitions << std::endl;
+	mFile << sizeOfVector << ";" << time << ";" << transitions << std::endl;
 }
 
 // The function responsible for closing an open file
 void Logger::closeFile() {
-	Logger::mFile.close();
-}
-
-// The function responsible for getting the file
-std::fstream& Logger::getFile() {
-	return mFile;
+	mFile.close();
 }
