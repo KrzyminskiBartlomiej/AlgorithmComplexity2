@@ -4,6 +4,19 @@
 //============================================================================
 #include "Logger.hpp"
 
+std::string Logger::convertTime(double time){
+	std::stringstream ss;
+	ss<<time;
+	std::string converted = ss.str();
+	for(unsigned int i=0; i<converted.size(); ++i){
+	     if(converted[i]=='.'){
+	       converted[i]=',';
+	       break;
+	   }
+	}
+	return converted;
+}
+
 // The function responsible for opening/creating the file
 void Logger::openFile(unsigned int typeOfSortingAlgorithm) {
 
@@ -62,7 +75,7 @@ void Logger::logVectorType(unsigned int typeOfVector) {
 
 // The function responsible for logging all sorting results to an open file
 void Logger::logSortingResults(int sizeOfVector, double time, long long transitions) {
-	mFile << sizeOfVector << ";" << time << ";" << transitions << std::endl;
+	mFile << sizeOfVector << ";" << convertTime(time) << ";" << transitions << std::endl;
 }
 
 // The function responsible for closing an open file
