@@ -13,7 +13,7 @@ public:
 	std::string convertTime(double time);
 
 protected:
-	std::fstream mFile;
+	std::ofstream mFile;
 };
 
 #endif /* LOGGER_HPP_ */
