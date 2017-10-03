@@ -60,7 +60,26 @@ void Logic::setInitialVectorSize(){
 }
 
 void Logic::fillVector(int n){
-	mFiller.fillVector(mVectorToSort, mSelectedVectors[n]);
+	switch (mSelectedVectors[n]) {
+	case 1:
+		mGenerator.createSortedSet(mVectorToSort);
+		break;
+	case 2:
+		mGenerator.createRandomSet(mVectorToSort);
+		break;
+	case 3:
+		mGenerator.createBackwardSortedSet(mVectorToSort);
+		break;
+	case 4:
+		mGenerator.createSortedSetWithFirstRandomValue(mVectorToSort);
+		break;
+	case 5:
+		mGenerator.createBackwardSortedSetWithLastRandomValue(mVectorToSort);
+		break;
+	default:
+		std::cout << "Vector filling failed!" << std::endl;
+		break;
+	}
 }
 
 void Logic::logVectorTypes(int n){
@@ -72,7 +91,26 @@ void Logic::logVectorTypes(int n){
 }
 
 void Logic::extendVector(int n){
-	mExtender.extendVector(mVectorToSort, mSelectedVectors[n], mInterval);
+	switch (mSelectedVectors[n]) {
+		case 1:
+			mGenerator.extendSortedSet(mVectorToSort, mInterval);
+			break;
+		case 2:
+			mGenerator.extendRandomSet(mVectorToSort, mInterval);
+			break;
+		case 3:
+			mGenerator.extendBackwardSortedSet(mVectorToSort, mInterval);
+			break;
+		case 4:
+			mGenerator.extendSortedSetWithFirstRandomValue(mVectorToSort, mInterval);
+			break;
+		case 5:
+			mGenerator.extendBackwardSortedSetWithLastRandomValue(mVectorToSort, mInterval);
+			break;
+		default:
+			std::cout << "Vector extension failed!" << std::endl;
+			break;
+		}
 }
 
 void Logic::logSortingResults(int algorithmIndex, int iteration){

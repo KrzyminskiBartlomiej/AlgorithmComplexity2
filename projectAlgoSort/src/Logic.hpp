@@ -10,10 +10,8 @@
 #include"CountingSort.hpp"
 #include"HeapSort.hpp"
 #include"Logger.hpp"
-#include "FunctionsSetter.hpp"
-#include "SortingAlgorithmSetter.hpp"
-#include "VectorExtender.hpp"
-#include "VectorFiller.hpp"
+#include"FunctionsSetter.hpp"
+#include"SortingAlgorithmSetter.hpp"
 
 class Logic
 {
@@ -43,9 +41,8 @@ private:
 	Logger mLogger;
 	FunctionsSetter mSetter;
 	std::vector<int>mVectorToSort;
-	VectorFiller mFiller;
-	VectorExtender mExtender;
 	SortingAlgorithmSetter mAlgorithmSetter;
+	DataSetGenerator mGenerator;
 };
 
 #endif /* LOGIC_HPP_ */
