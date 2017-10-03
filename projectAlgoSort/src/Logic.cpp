@@ -133,6 +133,7 @@ void Logic::sort(){
 				logSortingResults(j,i);
 			}
 		}
+		mVectorToSort.resize(mVectorSize);
 	}
 }
 
