@@ -1,13 +1,19 @@
-//============================================================================
-// Name        : SetFunctions.cpp
-// Description : C++ program for implementation of functions that can be controlled by users
-//============================================================================
+/**
+ * Name        : FunctionsSetter.cpp
+ * Description : C++ program for implementation of functions that can be controlled by users
+ *
+ */
+
 #include "FunctionsSetter.hpp"
 
-// Function that allows to select the type of vector
+/**
+ * A method that allows to select the type of vector.
+ *
+ */
+
 int FunctionsSetter::setVectorType(int n) {
 	int setNumber;
-	std::cout << "Select "<<n+1<<" type of set: " << std::endl;
+	std::cout << "Select " << n + 1 << " type of set: " << std::endl;
 	std::cout << "1.Sorted set." << std::endl;
 	std::cout << "2.Random set." << std::endl;
 	std::cout << "3.Backward sorted set." << std::endl;
@@ -15,13 +21,17 @@ int FunctionsSetter::setVectorType(int n) {
 	std::cout << "5.Backward sorted set with last random value." << std::endl;
 	std::cout << "Enter number: ";
 	std::cin >> setNumber;
-	if(setNumber>5){
-		setNumber=5;
+	if (setNumber > 5) {
+		setNumber = 5;
 	}
 	return setNumber;
 }
 
-// Function that allows to select the size of vector
+/**
+ * A method that allows to select the size of vector.
+ *
+ */
+
 unsigned long long FunctionsSetter::setVectorSize() {
 	unsigned long long vectorSize;
 	std::cout << "Enter initial vector's size: ";
@@ -29,7 +39,11 @@ unsigned long long FunctionsSetter::setVectorSize() {
 	return vectorSize;
 }
 
-// Function that allows to select the number of sorting algorithms
+/**
+ * A method that allows to select the number of sorting algorithms.
+ *
+ */
+
 int FunctionsSetter::setAlgorithmsNumber() {
 	int algorithmsNumber;
 	std::cout << "Enter number of algorithms you want to use: ";
@@ -37,14 +51,23 @@ int FunctionsSetter::setAlgorithmsNumber() {
 	return algorithmsNumber;
 }
 
-int FunctionsSetter::setVectorsNumber(){
+/**
+ * A method that allows to select the number of vectors.
+ *
+ */
+
+int FunctionsSetter::setVectorsNumber() {
 	int vectorsNumber;
 	std::cout << "Enter number of vectors you want to use: ";
 	std::cin >> vectorsNumber;
 	return vectorsNumber;
 }
 
-// Function that allows to select the type of sorting algorithm
+/**
+ * A method that allows to select the type of sorting algorithm.
+ *
+ */
+
 int FunctionsSetter::setAlgorithmType(int n) {
 	int algorithmNumber;
 	std::cout << "Select " << n + 1 << " algorithm: " << std::endl;
@@ -56,13 +79,17 @@ int FunctionsSetter::setAlgorithmType(int n) {
 	std::cout << "6.Heap sort." << std::endl;
 	std::cout << "Enter number: ";
 	std::cin >> algorithmNumber;
-	if(algorithmNumber>6){
-		algorithmNumber=6;
+	if (algorithmNumber > 6) {
+		algorithmNumber = 6;
 	}
 	return algorithmNumber;
 }
 
-// Function that allows to select the interval
+/**
+ * A method that allows to select the interval.
+ *
+ */
+
 unsigned long long FunctionsSetter::setInterval() {
 	unsigned long long interval;
 	std::cout << "Enter interval: ";
@@ -70,7 +97,11 @@ unsigned long long FunctionsSetter::setInterval() {
 	return interval;
 }
 
-// Function that allows to select the number of iterations
+/**
+ * A method that allows to select the number of iterations.
+ *
+ */
+
 unsigned long long FunctionsSetter::setIterations() {
 	unsigned long long iterations;
 	std::cout << "Enter iterations: ";
