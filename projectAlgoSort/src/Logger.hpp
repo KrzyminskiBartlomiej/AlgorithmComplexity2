@@ -3,17 +3,18 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <vector>
 
 class Logger {
 public:
-	void openFile(unsigned int typeOfSortingAlgorithm);
-	void logVectorType(unsigned int typeOfVector);
-	void logSortingResults(int sizeOfVector, double time, long long transitions);
-	void closeFile();
+	void openFile(unsigned int typeOfAlgorithm);
+	void logVectorType(unsigned int typeOfVector, unsigned int typeOfAlgorithm);
+	void logSortingResults(int sizeOfVector, double time, long long transitions, unsigned int typeOfAlgorithm);
+	void setFilesNumber(int filesNumber);
 	std::string convertTime(double time);
 
 protected:
-	std::ofstream mFile;
+	std::ofstream mFile[6];
 };
 
 #endif /* LOGGER_HPP_ */

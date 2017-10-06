@@ -1,7 +1,3 @@
-//============================================================================
-// Name        : main.cpp
-// Description : C++ program for implementation of the AlgorithmComplexity program
-//============================================================================
 #include<iostream>
 #include<utility>
 #include"Logic.hpp"

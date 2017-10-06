@@ -1,8 +1,15 @@
-//============================================================================
-// Name        : Logger.cpp
-// Description : C++ program for implementation of Logger
-//============================================================================
+/**
+* Name        : Logger.cpp
+* Description : C++ program for implementation of Logger
+*
+*/
+
 #include "Logger.hpp"
+/**
+* Method responsible for the conversion of a decimal
+* separator in a variable time from dot to comma.
+*
+*/
 
 std::string Logger::convertTime(double time){
 	std::stringstream ss;
@@ -17,28 +24,30 @@ std::string Logger::convertTime(double time){
 	return converted;
 }
 
-// The function responsible for opening/creating the file
-void Logger::openFile(unsigned int typeOfSortingAlgorithm) {
+/**
+* Method responsible for opening the file.
+*
+*/
 
-	// Select a file according to an argument passed to the function
-	switch (typeOfSortingAlgorithm) {
+void Logger::openFile(unsigned int typeOfAlgorithm) {
+	switch (typeOfAlgorithm) {
 	case 1:
-		Logger::mFile.open("BubbleSortResults.csv", std::ios::out | std::ios::app);
+		Logger::mFile[0].open("BubbleSortResults.csv", std::ios::out | std::ios::app);
 		break;
 	case 2:
-		Logger::mFile.open("QuickSortResults.csv", std::ios::out | std::ios::app);
+		Logger::mFile[1].open("QuickSortResults.csv", std::ios::out | std::ios::app);
 		break;
 	case 3:
-		Logger::mFile.open("InsertionSortResults.csv", std::ios::out | std::ios::app);
+		Logger::mFile[2].open("InsertionSortResults.csv", std::ios::out | std::ios::app);
 		break;
 	case 4:
-		Logger::mFile.open("MergeSortResults.csv", std::ios::out | std::ios::app);
+		Logger::mFile[3].open("MergeSortResults.csv", std::ios::out | std::ios::app);
 		break;
 	case 5:
-		Logger::mFile.open("CountingSortResults.csv", std::ios::out | std::ios::app);
+		Logger::mFile[4].open("CountingSortResults.csv", std::ios::out | std::ios::app);
 		break;
 	case 6:
-		Logger::mFile.open("HeapSortResults.csv", std::ios::out | std::ios::app);
+		Logger::mFile[5].open("HeapSortResults.csv", std::ios::out | std::ios::app);
 		break;
 	default:
 		std::cout << "File can not be opened!" << std::endl;
@@ -46,8 +55,11 @@ void Logger::openFile(unsigned int typeOfSortingAlgorithm) {
 	}
 }
 
-// The function responsible for logging of vector type to an open file
-void Logger::logVectorType(unsigned int typeOfVector) {
+/**
+* Method responsible for logging of vector type to an open file.
+*
+*/
+void Logger::logVectorType(unsigned int typeOfVector, unsigned int typeOfAlgorithm) {
 	std::string setType;
 	switch (typeOfVector) {
 	case 1:
@@ -69,16 +81,14 @@ void Logger::logVectorType(unsigned int typeOfVector) {
 		std::cout << "Converting of sorting algorithm from integer to string failed" << std::endl;
 		break;
 	}
-	mFile << "----------------------------------------" << std::endl << setType << std::endl << "----------------------------------------"
-			<< std::endl;
+	mFile[typeOfAlgorithm-1]<< "----------------------------------------" << std::endl << setType << std::endl << "----------------------------------------"
+	<< std::endl;
 }
 
-// The function responsible for logging all sorting results to an open file
-void Logger::logSortingResults(int sizeOfVector, double time, long long transitions) {
-	mFile << sizeOfVector << ";" << convertTime(time) << ";" << transitions << std::endl;
-}
-
-// The function responsible for closing an open file
-void Logger::closeFile() {
-	mFile.close();
+/**
+* Method responsible for logging all sorting results to an open file.
+*
+*/
+void Logger::logSortingResults(int sizeOfVector, double time, long long transitions, unsigned int typeOfAlgorithm) {
+	mFile[typeOfAlgorithm-1] << sizeOfVector << ";" << convertTime(time) << ";" << transitions << std::endl;
 }

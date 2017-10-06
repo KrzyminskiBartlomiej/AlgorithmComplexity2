@@ -29,7 +29,8 @@ public:
    void extendVector(int n);
    void logVectorTypes(int n);
    void sort();
-   void logSortingResults(int algorithmIndex, int iteration);
+   void logSortingToFile(int algorithmIndex, int iteration);
+   void openFiles();
    ~Logic();
 
 private:
