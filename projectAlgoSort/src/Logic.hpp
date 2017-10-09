@@ -31,6 +31,7 @@ public:
    void sort();
    void logSortingToFile(int algorithmIndex, int iteration);
    void openFiles();
+   void printSortingInProgress(int algorithmNumber, int vectorNumber);
    ~Logic();
 
 private:

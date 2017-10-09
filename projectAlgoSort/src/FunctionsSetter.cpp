@@ -13,16 +13,23 @@
 
 int FunctionsSetter::setVectorType(int n) {
 	int setNumber;
-	std::cout << "Select " << n + 1 << " type of set: " << std::endl;
-	std::cout << "1.Sorted set." << std::endl;
-	std::cout << "2.Random set." << std::endl;
-	std::cout << "3.Backward sorted set." << std::endl;
-	std::cout << "4.Sorted set with first random value." << std::endl;
-	std::cout << "5.Backward sorted set with last random value." << std::endl;
-	std::cout << "Enter number: ";
-	std::cin >> setNumber;
-	if (setNumber > 5) {
-		setNumber = 5;
+	bool valueCorrect=false;
+
+	while(!valueCorrect)
+	{
+		valueCorrect=true;
+		std::cout << "Select " << n + 1 << " type of set. " << std::endl;
+		std::cout << "1.Sorted set." << std::endl;
+		std::cout << "2.Random set." << std::endl;
+		std::cout << "3.Backward sorted set." << std::endl;
+		std::cout << "4.Sorted set with first random value." << std::endl;
+		std::cout << "5.Backward sorted set with last random value." << std::endl;
+		std::cout << "Enter number: ";
+		std::cin >> setNumber;
+		if (setNumber > 5||setNumber<1) {
+			std::cout<<"Invalid number. Please enter number within range 1-5."<<std::endl;
+			valueCorrect=false;
+		}
 	}
 	return setNumber;
 }
@@ -46,7 +53,7 @@ unsigned long long FunctionsSetter::setVectorSize() {
 
 int FunctionsSetter::setAlgorithmsNumber() {
 	int algorithmsNumber;
-	std::cout << "Enter number of algorithms you want to use: ";
+	std::cout << "Enter number of algorithms you want to use. Entering number greater than 6 will cause selecting all available algorithms: ";
 	std::cin >> algorithmsNumber;
 	return algorithmsNumber;
 }
@@ -58,7 +65,7 @@ int FunctionsSetter::setAlgorithmsNumber() {
 
 int FunctionsSetter::setVectorsNumber() {
 	int vectorsNumber;
-	std::cout << "Enter number of vectors you want to use: ";
+	std::cout << "Enter number of vectors you want to use. Entering number greater than 5 will cause selecting all available vectors:  ";
 	std::cin >> vectorsNumber;
 	return vectorsNumber;
 }
@@ -70,17 +77,24 @@ int FunctionsSetter::setVectorsNumber() {
 
 int FunctionsSetter::setAlgorithmType(int n) {
 	int algorithmNumber;
-	std::cout << "Select " << n + 1 << " algorithm: " << std::endl;
-	std::cout << "1.Bubble sort." << std::endl;
-	std::cout << "2.Quick sort." << std::endl;
-	std::cout << "3.Insertion sort." << std::endl;
-	std::cout << "4.Merge sort." << std::endl;
-	std::cout << "5.Counting sort." << std::endl;
-	std::cout << "6.Heap sort." << std::endl;
-	std::cout << "Enter number: ";
-	std::cin >> algorithmNumber;
-	if (algorithmNumber > 6) {
-		algorithmNumber = 6;
+	bool valueCorrect=false;
+
+	while(!valueCorrect)
+	{
+		valueCorrect=true;
+		std::cout << "Select " << n + 1 << " algorithm." << std::endl;
+		std::cout << "1.Bubble sort." << std::endl;
+		std::cout << "2.Quick sort." << std::endl;
+		std::cout << "3.Insertion sort." << std::endl;
+		std::cout << "4.Merge sort." << std::endl;
+		std::cout << "5.Counting sort." << std::endl;
+		std::cout << "6.Heap sort." << std::endl;
+		std::cout << "Enter number: ";
+		std::cin >> algorithmNumber;
+		if (algorithmNumber > 6||algorithmNumber<1) {
+			std::cout<<"Invalid number. Please enter number within range 1-6."<<std::endl;
+			valueCorrect=false;
+		}
 	}
 	return algorithmNumber;
 }

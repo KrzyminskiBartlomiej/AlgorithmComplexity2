@@ -30,28 +30,31 @@ std::string Logger::convertTime(double time){
 */
 
 void Logger::openFile(unsigned int typeOfAlgorithm) {
+
+	if(!mFile[typeOfAlgorithm-1].is_open()){
 	switch (typeOfAlgorithm) {
-	case 1:
-		Logger::mFile[0].open("BubbleSortResults.csv", std::ios::out | std::ios::app);
-		break;
-	case 2:
-		Logger::mFile[1].open("QuickSortResults.csv", std::ios::out | std::ios::app);
-		break;
-	case 3:
-		Logger::mFile[2].open("InsertionSortResults.csv", std::ios::out | std::ios::app);
-		break;
-	case 4:
-		Logger::mFile[3].open("MergeSortResults.csv", std::ios::out | std::ios::app);
-		break;
-	case 5:
-		Logger::mFile[4].open("CountingSortResults.csv", std::ios::out | std::ios::app);
-		break;
-	case 6:
-		Logger::mFile[5].open("HeapSortResults.csv", std::ios::out | std::ios::app);
-		break;
-	default:
-		std::cout << "File can not be opened!" << std::endl;
-		break;
+		case 1:
+			Logger::mFile[0].open("BubbleSortResults.csv", std::ios::out | std::ios::app);
+			break;
+		case 2:
+			Logger::mFile[1].open("QuickSortResults.csv", std::ios::out | std::ios::app);
+			break;
+		case 3:
+			Logger::mFile[2].open("InsertionSortResults.csv", std::ios::out | std::ios::app);
+			break;
+		case 4:
+			Logger::mFile[3].open("MergeSortResults.csv", std::ios::out | std::ios::app);
+			break;
+		case 5:
+			Logger::mFile[4].open("CountingSortResults.csv", std::ios::out | std::ios::app);
+			break;
+		case 6:
+			Logger::mFile[5].open("HeapSortResults.csv", std::ios::out | std::ios::app);
+			break;
+		default:
+			std::cout << "File can not be opened!" << std::endl;
+			break;
+		}
 	}
 }
 
