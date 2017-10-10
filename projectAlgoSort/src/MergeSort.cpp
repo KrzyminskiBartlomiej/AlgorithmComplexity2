@@ -32,9 +32,11 @@ void MergeSort::merge(std::vector<int> &toMerge, int leftIndexOfSet, int mediumI
 		if (leftSubset[indexOfFirstSubset] <= rightSubset[indexOfSecondSubset]) {
 			toMerge[indexOfMergedSubset] = leftSubset[indexOfFirstSubset];
 			indexOfFirstSubset++;
+			transitions++;
 		} else {
 			toMerge[indexOfMergedSubset] = rightSubset[indexOfSecondSubset];
 			indexOfSecondSubset++;
+			transitions++;
 		}
 		indexOfMergedSubset++;
 		transitions++;

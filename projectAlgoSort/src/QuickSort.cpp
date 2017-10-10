@@ -23,16 +23,18 @@ void QuickSort::quickSort(std::vector<int>& toSort, int low, int high, unsigned 
 	i = (low + high) / 2;
 	int pivot = toSort[i];
 	toSort[i] = toSort[high];
+	transitions++;
 	for (i = j = low; i < high; i++) {
 		if (toSort[i] < pivot) {
 			std::swap(toSort[i], toSort[j]);
 			j++;
 			transitions++;
 		}
-		transitions++;
 	}
 	toSort[high] = toSort[j];
+	transitions++;
 	toSort[j] = pivot;
+	transitions++;
 	if (low < j - 1) {
 		quickSort(toSort, low, j - 1, transitions);
 	}

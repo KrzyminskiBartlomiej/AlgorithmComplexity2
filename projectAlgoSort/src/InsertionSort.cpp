@@ -35,6 +35,7 @@ void InsertionSort::sort(std::vector<int> toSort) {
 			transitions++;
 		}
 		toSort[tmpToCompare - 1] = tmp;
+		transitions++;
 	}
 	stop = clock();
 
