@@ -52,7 +52,7 @@ void DataSetGenerator::createRandomSet(std::vector<int>& toFill) {
 void DataSetGenerator::extendRandomSet(std::vector<int>& toFill, unsigned long long toAdd) {
 	int lastElementIndex = toFill.size();
 	toFill.resize(toFill.size() + toAdd);
-	for (unsigned int i = 1; i < toAdd; ++i) {
+	for (unsigned int i = 0; i < toAdd; ++i) {
 		toFill[lastElementIndex++] = std::rand() % toFill.size();
 	}
 }
