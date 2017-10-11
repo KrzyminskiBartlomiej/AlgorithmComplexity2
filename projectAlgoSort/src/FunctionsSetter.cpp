@@ -41,8 +41,16 @@ int FunctionsSetter::setVectorType(int n) {
 
 unsigned long long FunctionsSetter::setVectorSize() {
 	unsigned long long vectorSize;
-	std::cout << "Enter the initial vector's size: ";
-	std::cin >> vectorSize;
+	while(true){
+		std::cout << "Enter the initial vector's size: ";
+		std::cin >> vectorSize;
+		if(vectorSize){
+			break;
+		}
+		else{
+		std::cout<<"Vector's size must be greater than zero."<<std::endl;
+		}
+	}
 	return vectorSize;
 }
 
@@ -53,8 +61,16 @@ unsigned long long FunctionsSetter::setVectorSize() {
 
 int FunctionsSetter::setAlgorithmsNumber() {
 	int algorithmsNumber;
-	std::cout << "Enter the number of algorithms you want to use. Entering the number greater than 6 will cause selecting all available algorithms: ";
-	std::cin >> algorithmsNumber;
+	while(true){
+		std::cout << "Enter the number of algorithms you want to use. Entering the number greater than 6 will cause selecting all available algorithms: ";
+		std::cin >> algorithmsNumber;
+		if(algorithmsNumber>0){
+			break;
+		}
+		else{
+			std::cout<<"Selected number must be greater than zero."<<std::endl;
+		}
+	}
 	return algorithmsNumber;
 }
 
@@ -65,8 +81,16 @@ int FunctionsSetter::setAlgorithmsNumber() {
 
 int FunctionsSetter::setVectorsNumber() {
 	int vectorsNumber;
-	std::cout << "Enter the number of vectors you want to use. Entering the number greater than 5 will cause selecting all available vectors:  ";
-	std::cin >> vectorsNumber;
+	while(true){
+		std::cout << "Enter the number of vectors you want to use. Entering the number greater than 5 will cause selecting all available vectors:  ";
+		std::cin >> vectorsNumber;
+		if(vectorsNumber>0){
+			break;
+		}
+		else{
+			std::cout<<"Selected number must be greater than zero."<<std::endl;
+		}
+	}
 	return vectorsNumber;
 }
 
@@ -78,7 +102,6 @@ int FunctionsSetter::setVectorsNumber() {
 int FunctionsSetter::setAlgorithmType(int n) {
 	int algorithmNumber;
 	bool valueCorrect=false;
-
 	while(!valueCorrect)
 	{
 		valueCorrect=true;
