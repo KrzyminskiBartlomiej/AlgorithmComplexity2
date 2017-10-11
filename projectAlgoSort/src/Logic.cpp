@@ -1,8 +1,9 @@
 /**
 * Name        : Logic.cpp
-* Description : C++ program for implementation of Bubble Sort
+* Description : C++ program for implementation of the logic of the program
 *
 */
+
 #include "Logic.hpp"
 
 Logic::Logic(){
@@ -17,18 +18,21 @@ Logic::Logic(){
 }
 
 /**
-* Method responsible for setting the number of sorting
+* A method that is responsible for setting the number of sorting
 * algorithms used in the program.
 *
 */
+
 void Logic::setAlgorithmsNumber(){
 	mAlgorithmsNumber = mSetter.setAlgorithmsNumber();
 }
+
 /**
-* Method responsible for selecting of sorting algorithms
+* A method that is responsible for selecting of sorting algorithms
 * used in the program and validating user's input.
 *
 */
+
 void Logic::setSelectedAlgorithms(){
 	mSelectedAlgorithms = new unsigned int[mAlgorithmsNumber];
 	int alreadySelectedAlgorithms=0;
@@ -58,18 +62,21 @@ void Logic::setSelectedAlgorithms(){
 }
 
 /**
-* Method responsible for setting the number of vectors
+* A method that is responsible for setting the number of vectors
 * used in the program.
 *
 */
+
 void  Logic::setVectorsNumber(){
 	mVectorsNumber = mSetter.setVectorsNumber();
 }
+
 /**
-* Method responsible for selecting of vectors used in
+* A method that is responsible for selecting of vectors used in
 * the program and validating user's input.
 *
 */
+
 void  Logic::setSelectedVectors(){
 	mSelectedVectors = new unsigned int[mVectorsNumber];
 	int alreadySelectedVectors=0;
@@ -97,33 +104,40 @@ void  Logic::setSelectedVectors(){
 		}
 	}
 }
+
 /**
-* Method responsible for setting the interval used to increase vector.
+* A method that is responsible for setting the interval used to
+* increase vector.
 *
 */
+
 void Logic::setInterval(){
 	mInterval = mSetter.setInterval();
 }
+
 /**
-* Method responsible for setting the number of
+* A method that is responsible for setting the number of
 * iterations in which vector is increased.
 *
 */
+
 void Logic::setIterations(){
 	mIterations = mSetter.setIterations();
 }
 
 /**
-* Method responsible for setting the initial size of the
+* A method that is responsible for setting the initial size of the
 * vector.
 *
 */
+
 void Logic::setInitialVectorSize(){
 	mVectorSize = mSetter.setVectorSize();
 	mVectorToSort.resize(mVectorSize);
 }
+
 /**
-* Method for filling the vector with integers.
+* A method that is responsible for filling the vector with integers.
 *
 */
 
@@ -151,7 +165,7 @@ void Logic::fillVector(int n){
 }
 
 /**
-* Method responsible for opening files.
+* A method that is responsible for opening files.
 *
 */
 
@@ -162,7 +176,7 @@ void Logic::openFiles(){
 }
 
 /**
-* Method responsible for logging names of selected vectors.
+* A method that is responsible for logging names of selected vectors.
 *
 */
 
@@ -172,7 +186,9 @@ void Logic::logVectorTypes(int n){
 	}
 }
 
-/**Method responsible for printing information regarding sorting process being in progress to the console.
+/**
+ * A method that is responsible for printing information regarding
+ * sorting process being in progress to the console.
  *
  */
 
@@ -228,7 +244,7 @@ void Logic::printSortingInProgress(int algorithmNumber, int vectorNumber){
 }
 
 /**
-* Method responsible for extension of the vector and
+* A method that is responsible for extension of the vector and
 * filling it with integers.
 *
 */
@@ -257,7 +273,7 @@ void Logic::extendVector(int n){
 }
 
 /**
-* Method responsible for logging sorting results into a CSV file.
+* A method that is responsible for logging sorting results into a CSV file.
 *
 */
 
@@ -266,7 +282,7 @@ void Logic::logSortingToFile(int algorithmIndex, int iteration){
 }
 
 /**
-* Method responsible for filling vector, sorting it and calling logging method.
+* A method that is responsible for filling vector, sorting it and calling logging method.
 *
 */
 
@@ -290,7 +306,7 @@ void Logic::sort(){
 }
 
 /**
-* Dectructor responsible for deletion of dynamically
+* A dectructor that is responsible for deletion of dynamically
 * allocated variables/arrays.
 *
 */

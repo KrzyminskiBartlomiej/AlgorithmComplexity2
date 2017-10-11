@@ -6,7 +6,7 @@
 
 #include "Logger.hpp"
 /**
-* Method responsible for the conversion of a decimal
+* A method that is responsible for the conversion of a decimal
 * separator in a variable time from dot to comma.
 *
 */
@@ -25,7 +25,7 @@ std::string Logger::convertTime(double time){
 }
 
 /**
-* Method responsible for opening the file.
+* A method that is responsible for opening the file.
 *
 */
 
@@ -59,7 +59,7 @@ void Logger::openFile(unsigned int typeOfAlgorithm) {
 }
 
 /**
-* Method responsible for logging of vector type to an open file.
+* A method that is responsible for logging of vector type to an open file.
 *
 */
 void Logger::logVectorType(unsigned int typeOfVector, unsigned int typeOfAlgorithm) {
@@ -89,7 +89,7 @@ void Logger::logVectorType(unsigned int typeOfVector, unsigned int typeOfAlgorit
 }
 
 /**
-* Method responsible for logging all sorting results to an open file.
+* A method that is responsible for logging all sorting results to an open file.
 *
 */
 void Logger::logSortingResults(int sizeOfVector, double time, long long transitions, unsigned int typeOfAlgorithm) {
