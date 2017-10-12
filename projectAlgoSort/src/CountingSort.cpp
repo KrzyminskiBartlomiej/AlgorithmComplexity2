@@ -34,7 +34,6 @@ void CountingSort::sort(std::vector<int> toSort) {
 			toSort[outputIndex++] = i;
 			transitions++;
 		}
-		transitions++;
 	}
 	stop = clock();
 
