@@ -32,7 +32,6 @@ void QuickSort::quickSort(std::vector<int>& toSort, int low, int high, unsigned 
 		}
 	}
 	toSort[high] = toSort[j];
-	transitions++;
 	toSort[j] = pivot;
 	transitions++;
 	if (low < j - 1) {
