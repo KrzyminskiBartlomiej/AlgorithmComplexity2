@@ -92,6 +92,6 @@ void Logger::logVectorType(unsigned int typeOfVector, unsigned int typeOfAlgorit
 * A method that is responsible for logging all sorting results to an open file.
 *
 */
-void Logger::logSortingResults(int sizeOfVector, double time, long long transitions, unsigned int typeOfAlgorithm) {
+void Logger::logSortingResults(int sizeOfVector, double time, unsigned long long transitions, unsigned int typeOfAlgorithm) {
 	mFile[typeOfAlgorithm-1] << sizeOfVector << ";" << convertTime(time) << ";" << transitions << std::endl;
 }

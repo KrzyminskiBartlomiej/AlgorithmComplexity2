@@ -13,7 +13,7 @@ public:
 	unsigned long long getTransitions();
 
 protected:
-	int mTransitions;
+	unsigned long long mTransitions;
 	double mTime;
 };
 
