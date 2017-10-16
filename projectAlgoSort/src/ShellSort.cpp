@@ -13,7 +13,7 @@
  */
 
 unsigned int ShellSort::setGap(unsigned long long sizeOfVector){
-    unsigned int gap = 1;
+    unsigned long long gap = 1;
     while(gap<sizeOfVector){
         gap = gap*3+1;
     }
@@ -35,13 +35,13 @@ unsigned int ShellSort::setGap(unsigned long long sizeOfVector){
  */
 
 void ShellSort::sort(std::vector<int> toSort) {
-	int sizeOfVector = toSort.size();
-	int gap, i, x, j;
-	gap=setGap(sizeOfVector);
-	unsigned long long transitions = 0;
+	unsigned long long sizeOfVector = toSort.size();
 	clock_t start, stop;
-
 	start = clock();
+	int i, x, j;
+	unsigned long long gap, transitions = 0;
+	gap=setGap(sizeOfVector);
+
     while(gap){
         for(j = sizeOfVector - gap - 1; j >= 0; j--){
                 x = toSort[j];

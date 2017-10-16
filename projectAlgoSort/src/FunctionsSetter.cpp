@@ -62,7 +62,7 @@ unsigned long long FunctionsSetter::setVectorSize() {
 int FunctionsSetter::setAlgorithmsNumber() {
 	int algorithmsNumber;
 	while(true){
-		std::cout << "Enter the number of algorithms you want to use. Entering the number greater than 6 will cause selecting all available algorithms: ";
+		std::cout << "Enter the number of algorithms you want to use. Entering the number greater than 7 will cause selecting all available algorithms: ";
 		std::cin >> algorithmsNumber;
 		if(algorithmsNumber>0){
 			break;
@@ -112,10 +112,11 @@ int FunctionsSetter::setAlgorithmType(int n) {
 		std::cout << "4.Merge sort." << std::endl;
 		std::cout << "5.Counting sort." << std::endl;
 		std::cout << "6.Heap sort." << std::endl;
+		std::cout << "7.Shell sort." << std::endl;
 		std::cout << "Enter the number: ";
 		std::cin >> algorithmNumber;
-		if (algorithmNumber > 6||algorithmNumber<1) {
-			std::cout<<"Invalid number. Please enter the number within range 1-6."<<std::endl;
+		if (algorithmNumber > 7||algorithmNumber<1) {
+			std::cout<<"Invalid number. Please enter the number within range 1-7."<<std::endl;
 			valueCorrect=false;
 		}
 	}
