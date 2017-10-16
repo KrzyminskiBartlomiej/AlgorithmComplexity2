@@ -6,6 +6,7 @@
 #include"MergeSort.hpp"
 #include"CountingSort.hpp"
 #include"HeapSort.hpp"
+#include"ShellSort.hpp"
 #include"SortingAlgorithm.hpp"
 #include <iostream>
 

@@ -37,7 +37,7 @@ void Logic::setSelectedAlgorithms(){
 	mSelectedAlgorithms = new unsigned int[mAlgorithmsNumber];
 	int alreadySelectedAlgorithms=0;
 	bool newAlgorithm;
-	if (mAlgorithmsNumber < 6) {
+	if (mAlgorithmsNumber < 7) {
 		for (int i = 0; i < mAlgorithmsNumber; ++i){
 			newAlgorithm = true;
 			mSelectedAlgorithms[i] = mSetter.setAlgorithmType(i);
@@ -54,7 +54,7 @@ void Logic::setSelectedAlgorithms(){
 			}
 		}
 	} else {
-		mAlgorithmsNumber = 6;
+		mAlgorithmsNumber = 7;
 		for (int i = 0; i < mAlgorithmsNumber; ++i){
 			mSelectedAlgorithms[i] = i + 1;
 		}
@@ -234,6 +234,9 @@ void Logic::printSortingInProgress(int algorithmNumber, int vectorNumber){
 			break;
 		case 6:
 			algorithmType = "Heap sort";
+			break;
+		case 7:
+			algorithmType = "Shell sort";
 			break;
 		default:
 			std::cout << "Unknown vector type" << std::endl;

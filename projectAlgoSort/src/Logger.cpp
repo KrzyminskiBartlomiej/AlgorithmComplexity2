@@ -51,6 +51,9 @@ void Logger::openFile(unsigned int typeOfAlgorithm) {
 		case 6:
 			Logger::mFile[5].open("HeapSortResults.csv", std::ios::out | std::ios::app);
 			break;
+		case 7:
+			Logger::mFile[6].open("ShellSortResults.csv", std::ios::out | std::ios::app);
+			break;
 		default:
 			std::cout << "File can not be opened!" << std::endl;
 			break;

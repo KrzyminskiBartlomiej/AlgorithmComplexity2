@@ -32,6 +32,9 @@ SortingAlgorithm* SortingAlgorithmSetter::setSortingAlgorithm(int sortAlgoNumber
 	case 6:
 		toSet = new HeapSort();
 		break;
+	case 7:
+		toSet = new ShellSort();
+		break;
 	default:
 		std::cout << "The sorting algorithm setting failed!" << std::endl;
 		break;

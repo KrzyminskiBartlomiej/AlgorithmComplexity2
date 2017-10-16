@@ -9,6 +9,7 @@
 #include"MergeSort.hpp"
 #include"CountingSort.hpp"
 #include"HeapSort.hpp"
+#include"ShellSort.hpp"
 #include"Logger.hpp"
 #include"FunctionsSetter.hpp"
 #include"SortingAlgorithmSetter.hpp"
