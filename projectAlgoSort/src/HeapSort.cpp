@@ -15,17 +15,15 @@
 
 void HeapSort::heapify(std::vector<int>& toSort, int vectorSize, int i, unsigned long long& transitions) {
 	int largest = i;
-	int l = 2 * i + 1;
-	int r = 2 * i + 2;
+	int left = 2 * i + 1;
+	int right = 2 * i + 2;
 
-	if (l < vectorSize && toSort[l] > toSort[largest]) {
-		largest = l;
-		transitions++;
+	if (left < vectorSize && toSort[left] > toSort[largest]) {
+		largest = left;
 	}
 
-	if (r < vectorSize && toSort[r] > toSort[largest]) {
-		largest = r;
-		transitions++;
+	if (right < vectorSize && toSort[right] > toSort[largest]) {
+		largest = right;
 	}
 
 	if (largest != i) {

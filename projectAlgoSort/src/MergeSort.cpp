@@ -13,7 +13,7 @@
  */
 
 void MergeSort::merge(std::vector<int> &toMerge, int leftIndexOfSet, int mediumIndexOfSet, int rightIndexOfSet, unsigned long long& transitions) {
-	int indexOfFirstSubset, indexOfSecondSubset, indexOfMergedSubset;
+	int indexOfFirstSubset = 0, indexOfSecondSubset = 0, indexOfMergedSubset;
 	int subsetOneSize = mediumIndexOfSet - leftIndexOfSet + 1;
 	int subsetTwoSize = rightIndexOfSet - mediumIndexOfSet;
 	int leftSubset[subsetOneSize], rightSubset[subsetTwoSize];
@@ -25,18 +25,14 @@ void MergeSort::merge(std::vector<int> &toMerge, int leftIndexOfSet, int mediumI
 		rightSubset[j] = toMerge[mediumIndexOfSet + 1 + j];
 		transitions++;
 	}
-	indexOfFirstSubset = 0;
-	indexOfSecondSubset = 0;
 	indexOfMergedSubset = leftIndexOfSet;
 	while (indexOfFirstSubset < subsetOneSize && indexOfSecondSubset < subsetTwoSize) {
 		if (leftSubset[indexOfFirstSubset] <= rightSubset[indexOfSecondSubset]) {
 			toMerge[indexOfMergedSubset] = leftSubset[indexOfFirstSubset];
 			indexOfFirstSubset++;
-			transitions++;
 		} else {
 			toMerge[indexOfMergedSubset] = rightSubset[indexOfSecondSubset];
 			indexOfSecondSubset++;
-			transitions++;
 		}
 		indexOfMergedSubset++;
 		transitions++;
